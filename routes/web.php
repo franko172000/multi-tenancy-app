@@ -18,8 +18,8 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::domain('{username}.propel-me.site')->group(function () {
+//Subdomain routes
+Route::domain('{username}.'.env('APP_DOMAIN'))->group(function () {
     Route::middleware('validateDomain')->group(function (){
         Route::get('/', [HomeController::class, 'tenantIndex'])->name('tenant.home');
 
@@ -42,7 +42,7 @@ Route::domain('{username}.propel-me.site')->group(function () {
     });
 });
 
-Route::domain('propel-me.site')->group(function () {
+Route::domain(env('APP_DOMAIN'))->group(function () {
 
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
