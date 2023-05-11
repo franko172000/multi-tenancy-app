@@ -29,12 +29,12 @@ If you followed the steps above, you can login to any account with the credentia
 - Email: arik@example.com PW: test123
 
 ## Available Domains
-1. propel-me.site 
-2. aero.propel-me.site 
-3. airpeace.propel-me.site 
-4. arik.propel-me.site 
-5. dana.propel-me.site 
-6. rano.propel-me.site 
-7. maxair.propel-me.site
+1. http://propel-me.site 
+2. http://aero.propel-me.site 
+3. http://airpeace.propel-me.site 
+4. http://arik.propel-me.site 
+5. http://dana.propel-me.site 
+6. http://rano.propel-me.site 
+7. http://maxair.propel-me.site
 
 Visit any of the listed domains in your browser
