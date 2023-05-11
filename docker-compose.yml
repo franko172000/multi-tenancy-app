@@ -6,8 +6,8 @@ services:
             dockerfile: Dockerfile
         volumes:
             - .:/usr/src/app
-        env_file:
-           - ./.env.docker
+#        env_file:
+#           - ./.env.docker
 #        entrypoint: sh -c "/tmp/run.sh"
         networks:
             - propel
@@ -19,10 +19,10 @@ services:
         image: mysql:5.7
         restart: unless-stopped
         environment:
-            MYSQL_ROOT_PASSWORD: laravel
-            MYSQL_USER: laravel
-            MYSQL_DATABASE: propel_project
-            MYSQL_PASSWORD: laravel
+            MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+            MYSQL_USER: '${DB_USERNAME}'
+            MYSQL_DATABASE: '${DB_DATABASE}'
+            MYSQL_PASSWORD: '${DB_PASSWORD}'
             MYSQL_ALLOW_EMPTY_PASSWORD: 1
         volumes:
             - mysqldata:/var/lib/mysql/
@@ -39,7 +39,7 @@ services:
         image: nginx:stable-alpine
         restart: unless-stopped
         ports:
-            - 8080:80
+            - '8080:80'
         networks:
             - propel
         volumes:

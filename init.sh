@@ -3,7 +3,7 @@ source "./shell-utils/helper.sh"
 set -e
 if [ -x "$(command -v docker)" ]; then
     process_info "Spinning up containers..."
-    sudo docker-compose up --build -d
+    sudo docker-compose --env-file ./.env.docker up --build -d
     success "Containers started"
 
     process_info "Installing dependencies..."
