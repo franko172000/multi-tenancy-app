@@ -91,6 +91,8 @@ class DatabaseSeeder extends Seeder
             ]
         ]);
 
-        $users->each(fn($user)=>User::create($user));
+        $users->each(fn($user)=>User::updateOrCreate([
+            'email' => $user['email']
+        ], $user));
     }
 }

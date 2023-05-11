@@ -11,7 +11,7 @@ RUN curl -s -f -L -o /tmp/dockerize.tar.gz https://github.com/jwilder/dockerize/
 ENV COMPOSER_VERSION 2.5.5
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         libz-dev \
